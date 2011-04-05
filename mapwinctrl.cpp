@@ -248,6 +248,7 @@ void MapWinCtrl::setReport()
 }
 
 void MapWinCtrl::goToGenerate(){
+    qDebug() << "SIZE??? " << listOfFacility.at(0)->getSizeAcute();
 
     reportWin = new GenReportWin();
     reportWin->show();

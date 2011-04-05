@@ -7,8 +7,9 @@
 #include <QMainWindow>
 #include <QDialog>
 #include <qobject.h>
-//#include "MessageController.h"
-
+//you'll need these includes
+#include <QFile>
+#include <QTextStream>
 
 
 class Message
