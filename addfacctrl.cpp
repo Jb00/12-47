@@ -38,64 +38,38 @@ void AddFacCtrl::invalid(){
 
 void AddFacCtrl::addToDb()
 {
+
+    QString numBeds;
     if (!(facilityName == ""))
     {
 
         Facility * aFacility = new Facility(id, facilityName,x,y,AC,CCC,LTC); //Create the facility to add
         facilityList->append(aFacility); //Append it to the list of facility
 
-     //  MapWinCtrl::getInstance()->listOfFacility.append(aFacility);  MAYBE
-        qDebug() <<"AFTER";
-        qDebug() <<facilityList->size();
+        numBeds.setNum(AC);
+        qDebug() << "Number of beds being added to AC before if: " << numBeds;
+
+        if(AC > 0){
+            numBeds.setNum(AC);
+
+            qDebug() << "Number of beds being added to AC: " << numBeds;
+            AddBedController::getInstance()->addtoBed(numBeds, "Acute", aFacility);
+        }
+        if(CCC > 0){
+            numBeds.setNum(CCC);
+            AddBedController::getInstance()->addtoBed(numBeds, "Complex", aFacility);
+        }
+        if(LTC > 0){
+            numBeds.setNum(LTC);
+            AddBedController::getInstance()->addtoBed(numBeds, "LTC", aFacility);
+        }
+
         facilityList=NULL;
 
         MessageController::getInstance()->toSend(XMLReader::getInstance()->addFacility(id,facilityName,x,y,AC,CCC,LTC,0));
 
 
 
-  /*  QSqlQuery query;
-    QString queryText;
-
-    //MISS AREA AND FACILITY ID UNSURE YET
-
-
-    //the main insert script
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    queryText = "INSERT INTO facility (facilityID, name, coordinateX, coordinateY, AC, CCC,LTC)"
-                " VALUES (:id, :facilityName, :x, :y, :AC, :CCC, :LTC)";
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-    query.prepare(queryText);
-
-    //binding the variables from the form to the query
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    query.bindValue(":facilityID", id);
-    query.bindValue(":facilityName", facilityName);
-    query.bindValue(":x", x);
-    query.bindValue(":y", y);
-    query.bindValue(":AC", AC);
-    query.bindValue(":CCC", CCC);
-    query.bindValue(":LTC", LTC);
-
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    query.exec(); //executing the query
-
-    //checking if the facility was added correctly and if not an error is produced
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- /*   if(query.numRowsAffected() > 0){
-        QMessageBox::information( this, "Add Facility Popup",
-        "Facility " + facilityName + "has been added sucessfully!!");
-    }
-    else{
-        QMessageBox::information( this, "error",
-       "An error has occured while adding " + facilityName + " to the database");
-    }
-*/
-
-
-//db.close();
 }
     id = -1;
     facilityName ="";

@@ -228,7 +228,10 @@ void AddBedController::addtoBed2(QString aNumberBed, QString aType, Facility *aF
             for (int i=0; i< numberBedInt ; i++)
             {
                 qDebug() <<"in db";
-                query.exec("update facility set AC = (SELECT SUM(AC)  + 1 from facility) ;");
+
+                if (ours)
+                    query.exec("update facility set AC = (SELECT SUM(AC)  + 1 from facility) ;");
+
                 aFacility->addBedAcute();
             }
             MessageController::getInstance()->toSend(XMLReader::getInstance()->addOrDeleteBeds(aFacility->getArea(),"AC",facilityId,numberBedInt,false,"Add"));
@@ -242,6 +245,7 @@ void AddBedController::addtoBed2(QString aNumberBed, QString aType, Facility *aF
             {
                 if (ours){
                     query.exec("update facility set CCC = (SELECT SUM(CCC) - 1 from facility) ;");}
+
                 MessageController::getInstance()->toSend(XMLReader::getInstance()->addOrDeleteBeds(aFacility->getArea(),"CCC",facilityId,numberBedInt,false,"Delete"));
             }
             else return;
@@ -251,7 +255,10 @@ void AddBedController::addtoBed2(QString aNumberBed, QString aType, Facility *aF
             for (int i=0; i< numberBedInt ; i++)
             {
                 qDebug() <<"in db";
-                query.exec("update facility set CCC = (SELECT SUM(CCC)  + 1 from facility) ;");
+
+                if (ours)
+                    query.exec("update facility set CCC = (SELECT SUM(CCC)  + 1 from facility) ;");
+
                 aFacility->addBedComplex();
             }
             MessageController::getInstance()->toSend(XMLReader::getInstance()->addOrDeleteBeds(aFacility->getArea(),"CCC",facilityId,numberBedInt,false,"Add"));
@@ -265,6 +272,7 @@ void AddBedController::addtoBed2(QString aNumberBed, QString aType, Facility *aF
             {
                 if (ours){
                     query.exec("update facility set LTC = (SELECT SUM(LTC) - 1 from facility) ;");}
+
                 MessageController::getInstance()->toSend(XMLReader::getInstance()->addOrDeleteBeds(aFacility->getArea(),"LTC",facilityId,numberBedInt,false,"Delete"));
             }
             else return;
@@ -274,7 +282,10 @@ void AddBedController::addtoBed2(QString aNumberBed, QString aType, Facility *aF
             for (int i=0; i< numberBedInt ; i++)
             {
                 qDebug() <<"in db";
-                query.exec("update facility set LTC = (SELECT SUM(LTC)  + 1 from facility) ;");
+
+                if (ours)
+                    query.exec("update facility set LTC = (SELECT SUM(LTC)  + 1 from facility) ;");
+
                 aFacility->addBedLTC();
             }
             MessageController::getInstance()->toSend(XMLReader::getInstance()->addOrDeleteBeds(aFacility->getArea(),"LTC",facilityId,numberBedInt,false,"Add"));

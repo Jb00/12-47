@@ -48,7 +48,9 @@ SOURCES += main.cpp\
     genreportwin.cpp \
     genreportctrl.cpp \
     newpatientctrl.cpp \
-    newpatientwindow.cpp
+    newpatientwindow.cpp \
+    removeuser.cpp \
+    removeuserctrl.cpp
 
 HEADERS  += loginwindow.h \
     User.h \
@@ -83,7 +85,9 @@ HEADERS  += loginwindow.h \
     genreportwin.h \
     genreportctrl.h \
     newpatientctrl.h \
-    newpatientwindow.h
+    newpatientwindow.h \
+    removeuser.h \
+    removeuserctrl.h
 
 FORMS    += loginwindow.ui \
     mapwindow.ui \
@@ -94,4 +98,5 @@ FORMS    += loginwindow.ui \
     facilitywindow.ui \
     waitinglistwindow.ui \
     genreportwin.ui \
-    newpatientwindow.ui
+    newpatientwindow.ui \
+    removeuser.ui

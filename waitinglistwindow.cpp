@@ -58,7 +58,7 @@ void WaitingListWindow::searchBtn_clicked(){
     card = ui->healthLine->text().toInt();
     aPatient = WaitingCtrl::getInstance()->searchForPatient(card);
 
-    qDebug() << "The patient healthcard number is: " << aPatient->gethealthCard();
+    //qDebug() << "The patient healthcard number is: " << aPatient->gethealthCard();
     if((!aPatient) || (ui->healthLine->text().isEmpty())){
         WaitingCtrl::getInstance()->invalid("Please enter a valid HC number.");
         ui->healthLine->clear();
@@ -93,11 +93,14 @@ void WaitingListWindow::removeBtn_clicked(){
 
     if(!(ui->cardNumLbl->text().isEmpty()) && (ui->cardNumLbl->text().toInt() == card)){
 
-
-
-
-        //qDebug() << "In remove btn clicked!";
         WaitingCtrl::getInstance()->removePatient(aPatient);
+        ui->healthLine->clear();
+        ui->fnameLbl->clear();
+        ui->lnameLbl->clear();
+        ui->cardNumLbl->clear();
+        ui->facnameLbl->clear();
+        ui->waitingLbl->clear();
+        ui->careLbl->clear();
     }
     else{
         WaitingCtrl::getInstance()->invalid("Please enter a valid HC number.");

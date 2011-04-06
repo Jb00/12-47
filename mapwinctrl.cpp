@@ -53,7 +53,12 @@ void MapWinCtrl::invalid(){
     genCTRL::center(*invalidWin);
 }
 
+void MapWinCtrl::goToRemoveUser(){
+    remUser = new RemoveUser();
+    remUser->show();
 
+    genCTRL::center(*remUser);
+}
 
 MapWinCtrl* MapWinCtrl::getInstance()
 {
@@ -61,6 +66,56 @@ MapWinCtrl* MapWinCtrl::getInstance()
         anInstance = new MapWinCtrl; //Create a new instance, new for the heap.
 
     return anInstance;//Return the instance.
+}
+
+QList<Facility*> MapWinCtrl::getHospitals(){
+    for(int i = 0; i < listOfFacility.size(); i++){
+
+        if(listOfFacility.at(i)->getType() == "H")
+            listOfHospital.append(listOfFacility.at(i));
+    }
+
+    return listOfHospital;
+}
+
+QList<Facility*> MapWinCtrl::getNursing(){
+    for(int i = 0; i < listOfFacility.size(); i++){
+
+        if(listOfFacility.at(i)->getType() == "N")
+            listOfNursing.append(listOfFacility.at(i));
+    }
+
+    return listOfNursing;
+}
+
+QList<Facility*> MapWinCtrl::getACAvailable(){
+    for(int i = 0; i < listOfFacility.size(); i++){
+
+        if(listOfFacility.at(i)->getSizeAvailableAcute() > 0)
+            availableACBeds.append(listOfFacility.at(i));
+    }
+
+    return availableACBeds;
+}
+
+QList<Facility*> MapWinCtrl::getCCCAvailable(){
+    for(int i = 0; i < listOfFacility.size(); i++){
+
+        if(listOfFacility.at(i)->getSizeAvailableComplex() > 0)
+            availableCCCBeds.append(listOfFacility.at(i));
+    }
+
+    return availableCCCBeds;
+}
+
+QList<Facility*> MapWinCtrl::getLTCAvailable(){
+    for(int i = 0; i < listOfFacility.size(); i++){
+
+        if(listOfFacility.at(i)->getSizeAvailableLTC() > 0)
+            availableLTCBeds.append(listOfFacility.at(i));
+    }
+
+    return availableLTCBeds;
 }
 
 void MapWinCtrl::goToAddUser()
@@ -89,20 +144,14 @@ void MapWinCtrl::goToAddFac(const QPoint &pnt, const int &area, const QColor &aC
 
 }
 
-void MapWinCtrl::gotoFacility()
+void MapWinCtrl::gotoFacility(int index)
 {
     aFacilityView = new FacilityWindow();
     aFacilityView->show();
-    aFacilityView->setUI(listOfFacility.at(0));
-   genCTRL::center(*aFacilityView);
-
-
-
-
-
-
-
+    aFacilityView->setUI(listOfFacility.at(index));
+    genCTRL::center(*aFacilityView);
 }
+
 
 
 //Put from DB to our list the patients

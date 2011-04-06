@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'facilitywindow.ui'
 **
-** Created: Tue Apr 5 11:45:26 2011
+** Created: Tue Apr 5 23:59:32 2011
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -59,7 +59,7 @@ public:
     QVBoxLayout *verticalLayout_6;
     QFrame *frame_2;
     QLabel *label_7;
-    QWidget *layoutWidget4;
+    QWidget *widget;
     QFormLayout *formLayout;
     QLabel *label_8;
     QLabel *nameLbl;
@@ -69,9 +69,11 @@ public:
     QLabel *xLbl;
     QLabel *label_14;
     QLabel *yLbl;
+    QLabel *label_15;
+    QLabel *wlLbl;
     QLabel *crossImg;
     QFrame *frame_6;
-    QWidget *layoutWidget5;
+    QWidget *layoutWidget4;
     QGridLayout *gridLayout_3;
     QPushButton *waitingBtn;
     QPushButton *patientAddBtn;
@@ -81,12 +83,12 @@ public:
     {
         if (FacilityWindow->objectName().isEmpty())
             FacilityWindow->setObjectName(QString::fromUtf8("FacilityWindow"));
-        FacilityWindow->resize(420, 522);
+        FacilityWindow->resize(420, 561);
         centralWidget = new QWidget(FacilityWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         frame = new QFrame(centralWidget);
         frame->setObjectName(QString::fromUtf8("frame"));
-        frame->setGeometry(QRect(10, 270, 401, 241));
+        frame->setGeometry(QRect(10, 310, 401, 241));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
         label = new QLabel(frame);
@@ -202,87 +204,97 @@ public:
         verticalLayout_6->setContentsMargins(0, 0, 0, 0);
         frame_2 = new QFrame(centralWidget);
         frame_2->setObjectName(QString::fromUtf8("frame_2"));
-        frame_2->setGeometry(QRect(10, 90, 261, 171));
+        frame_2->setGeometry(QRect(10, 110, 261, 191));
         frame_2->setFrameShape(QFrame::StyledPanel);
         frame_2->setFrameShadow(QFrame::Raised);
         label_7 = new QLabel(frame_2);
         label_7->setObjectName(QString::fromUtf8("label_7"));
         label_7->setGeometry(QRect(50, 10, 141, 20));
-        layoutWidget4 = new QWidget(frame_2);
-        layoutWidget4->setObjectName(QString::fromUtf8("layoutWidget4"));
-        layoutWidget4->setGeometry(QRect(10, 50, 231, 101));
-        formLayout = new QFormLayout(layoutWidget4);
+        widget = new QWidget(frame_2);
+        widget->setObjectName(QString::fromUtf8("widget"));
+        widget->setGeometry(QRect(10, 51, 241, 111));
+        formLayout = new QFormLayout(widget);
         formLayout->setSpacing(6);
         formLayout->setContentsMargins(11, 11, 11, 11);
         formLayout->setObjectName(QString::fromUtf8("formLayout"));
         formLayout->setContentsMargins(0, 0, 0, 0);
-        label_8 = new QLabel(layoutWidget4);
+        label_8 = new QLabel(widget);
         label_8->setObjectName(QString::fromUtf8("label_8"));
 
         formLayout->setWidget(0, QFormLayout::LabelRole, label_8);
 
-        nameLbl = new QLabel(layoutWidget4);
+        nameLbl = new QLabel(widget);
         nameLbl->setObjectName(QString::fromUtf8("nameLbl"));
 
         formLayout->setWidget(0, QFormLayout::FieldRole, nameLbl);
 
-        label_11 = new QLabel(layoutWidget4);
+        label_11 = new QLabel(widget);
         label_11->setObjectName(QString::fromUtf8("label_11"));
 
         formLayout->setWidget(1, QFormLayout::LabelRole, label_11);
 
-        idLbl = new QLabel(layoutWidget4);
+        idLbl = new QLabel(widget);
         idLbl->setObjectName(QString::fromUtf8("idLbl"));
 
         formLayout->setWidget(1, QFormLayout::FieldRole, idLbl);
 
-        label_13 = new QLabel(layoutWidget4);
+        label_13 = new QLabel(widget);
         label_13->setObjectName(QString::fromUtf8("label_13"));
 
         formLayout->setWidget(2, QFormLayout::LabelRole, label_13);
 
-        xLbl = new QLabel(layoutWidget4);
+        xLbl = new QLabel(widget);
         xLbl->setObjectName(QString::fromUtf8("xLbl"));
 
         formLayout->setWidget(2, QFormLayout::FieldRole, xLbl);
 
-        label_14 = new QLabel(layoutWidget4);
+        label_14 = new QLabel(widget);
         label_14->setObjectName(QString::fromUtf8("label_14"));
 
         formLayout->setWidget(3, QFormLayout::LabelRole, label_14);
 
-        yLbl = new QLabel(layoutWidget4);
+        yLbl = new QLabel(widget);
         yLbl->setObjectName(QString::fromUtf8("yLbl"));
 
         formLayout->setWidget(3, QFormLayout::FieldRole, yLbl);
+
+        label_15 = new QLabel(widget);
+        label_15->setObjectName(QString::fromUtf8("label_15"));
+
+        formLayout->setWidget(4, QFormLayout::LabelRole, label_15);
+
+        wlLbl = new QLabel(widget);
+        wlLbl->setObjectName(QString::fromUtf8("wlLbl"));
+
+        formLayout->setWidget(4, QFormLayout::FieldRole, wlLbl);
 
         crossImg = new QLabel(centralWidget);
         crossImg->setObjectName(QString::fromUtf8("crossImg"));
         crossImg->setGeometry(QRect(320, 10, 71, 71));
         frame_6 = new QFrame(centralWidget);
         frame_6->setObjectName(QString::fromUtf8("frame_6"));
-        frame_6->setGeometry(QRect(270, 90, 141, 171));
+        frame_6->setGeometry(QRect(270, 110, 141, 191));
         frame_6->setFrameShape(QFrame::StyledPanel);
         frame_6->setFrameShadow(QFrame::Raised);
-        layoutWidget5 = new QWidget(frame_6);
-        layoutWidget5->setObjectName(QString::fromUtf8("layoutWidget5"));
-        layoutWidget5->setGeometry(QRect(12, 10, 121, 151));
-        gridLayout_3 = new QGridLayout(layoutWidget5);
+        layoutWidget4 = new QWidget(frame_6);
+        layoutWidget4->setObjectName(QString::fromUtf8("layoutWidget4"));
+        layoutWidget4->setGeometry(QRect(12, 10, 121, 151));
+        gridLayout_3 = new QGridLayout(layoutWidget4);
         gridLayout_3->setSpacing(6);
         gridLayout_3->setContentsMargins(11, 11, 11, 11);
         gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
         gridLayout_3->setContentsMargins(0, 0, 0, 0);
-        waitingBtn = new QPushButton(layoutWidget5);
+        waitingBtn = new QPushButton(layoutWidget4);
         waitingBtn->setObjectName(QString::fromUtf8("waitingBtn"));
 
         gridLayout_3->addWidget(waitingBtn, 0, 0, 1, 1);
 
-        patientAddBtn = new QPushButton(layoutWidget5);
+        patientAddBtn = new QPushButton(layoutWidget4);
         patientAddBtn->setObjectName(QString::fromUtf8("patientAddBtn"));
 
         gridLayout_3->addWidget(patientAddBtn, 1, 0, 1, 1);
 
-        cancelBtn = new QPushButton(layoutWidget5);
+        cancelBtn = new QPushButton(layoutWidget4);
         cancelBtn->setObjectName(QString::fromUtf8("cancelBtn"));
 
         gridLayout_3->addWidget(cancelBtn, 2, 0, 1, 1);
@@ -318,6 +330,8 @@ public:
         xLbl->setText(QString());
         label_14->setText(QApplication::translate("FacilityWindow", "Y coord.:", 0, QApplication::UnicodeUTF8));
         yLbl->setText(QString());
+        label_15->setText(QApplication::translate("FacilityWindow", "WL Size:", 0, QApplication::UnicodeUTF8));
+        wlLbl->setText(QString());
         crossImg->setText(QString());
         waitingBtn->setText(QApplication::translate("FacilityWindow", "Search", 0, QApplication::UnicodeUTF8));
         patientAddBtn->setText(QApplication::translate("FacilityWindow", "New Patient", 0, QApplication::UnicodeUTF8));

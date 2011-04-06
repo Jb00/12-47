@@ -34,12 +34,14 @@ void FacilityWindow::setUI(Facility* aFacility)
     x.setNum(facility->getX());
     QString y;
     y.setNum(facility->getY());
-
+    QString wl;
+    wl.setNum(facility->getSizeWL());
 
     ui->nameLbl->setText(facility->getName());
     ui->idLbl->setText(id);
     ui->xLbl->setText(x);
     ui->yLbl->setText(y);
+    ui->wlLbl->setText(wl);
 
     //for acute occupancy as it is the default one
     QString occ;

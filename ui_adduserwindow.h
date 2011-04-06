@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'adduserwindow.ui'
 **
-** Created: Tue Apr 5 11:45:26 2011
+** Created: Tue Apr 5 22:46:15 2011
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -14,6 +14,7 @@
 #include <QtGui/QAction>
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
+#include <QtGui/QFrame>
 #include <QtGui/QGridLayout>
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QHeaderView>
@@ -31,12 +32,6 @@ class Ui_AddUserWindow
 public:
     QAction *actionExit;
     QWidget *centralWidget;
-    QWidget *layoutWidget;
-    QGridLayout *gridLayout;
-    QLabel *label;
-    QLabel *label_2;
-    QLabel *label_3;
-    QLabel *label_4;
     QWidget *layoutWidget_2;
     QHBoxLayout *horizontalLayout;
     QSpacerItem *horizontalSpacer;
@@ -44,53 +39,29 @@ public:
     QPushButton *okBtn;
     QPushButton *cancelBtn;
     QSpacerItem *horizontalSpacer_2;
+    QFrame *frame;
     QWidget *widget;
-    QGridLayout *gridLayout_3;
+    QGridLayout *gridLayout;
+    QLabel *label;
     QLineEdit *nameLine;
+    QLabel *label_2;
     QLineEdit *passwordLine;
-    QLineEdit *typeLine;
-    QLineEdit *careLine;
+    QLabel *label_3;
+    QLineEdit *permissionLine;
+    QLabel *crossImg;
 
     void setupUi(QMainWindow *AddUserWindow)
     {
         if (AddUserWindow->objectName().isEmpty())
             AddUserWindow->setObjectName(QString::fromUtf8("AddUserWindow"));
-        AddUserWindow->resize(380, 268);
+        AddUserWindow->resize(381, 302);
         actionExit = new QAction(AddUserWindow);
         actionExit->setObjectName(QString::fromUtf8("actionExit"));
         centralWidget = new QWidget(AddUserWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
-        layoutWidget = new QWidget(centralWidget);
-        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(10, 20, 87, 151));
-        gridLayout = new QGridLayout(layoutWidget);
-        gridLayout->setSpacing(6);
-        gridLayout->setContentsMargins(11, 11, 11, 11);
-        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        gridLayout->setContentsMargins(0, 0, 0, 0);
-        label = new QLabel(layoutWidget);
-        label->setObjectName(QString::fromUtf8("label"));
-
-        gridLayout->addWidget(label, 0, 0, 1, 1);
-
-        label_2 = new QLabel(layoutWidget);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-
-        gridLayout->addWidget(label_2, 1, 0, 1, 1);
-
-        label_3 = new QLabel(layoutWidget);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
-
-        gridLayout->addWidget(label_3, 2, 0, 1, 1);
-
-        label_4 = new QLabel(layoutWidget);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
-
-        gridLayout->addWidget(label_4, 3, 0, 1, 1);
-
         layoutWidget_2 = new QWidget(centralWidget);
         layoutWidget_2->setObjectName(QString::fromUtf8("layoutWidget_2"));
-        layoutWidget_2->setGeometry(QRect(0, 210, 381, 31));
+        layoutWidget_2->setGeometry(QRect(0, 260, 381, 31));
         horizontalLayout = new QHBoxLayout(layoutWidget_2);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
@@ -120,34 +91,52 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer_2);
 
-        widget = new QWidget(centralWidget);
+        frame = new QFrame(centralWidget);
+        frame->setObjectName(QString::fromUtf8("frame"));
+        frame->setGeometry(QRect(10, 100, 361, 151));
+        frame->setFrameShape(QFrame::StyledPanel);
+        frame->setFrameShadow(QFrame::Raised);
+        widget = new QWidget(frame);
         widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(110, 20, 261, 161));
-        gridLayout_3 = new QGridLayout(widget);
-        gridLayout_3->setSpacing(6);
-        gridLayout_3->setContentsMargins(11, 11, 11, 11);
-        gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
-        gridLayout_3->setContentsMargins(0, 0, 0, 0);
+        widget->setGeometry(QRect(10, 10, 341, 131));
+        gridLayout = new QGridLayout(widget);
+        gridLayout->setSpacing(6);
+        gridLayout->setContentsMargins(11, 11, 11, 11);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        gridLayout->setContentsMargins(0, 0, 0, 0);
+        label = new QLabel(widget);
+        label->setObjectName(QString::fromUtf8("label"));
+
+        gridLayout->addWidget(label, 0, 0, 1, 1);
+
         nameLine = new QLineEdit(widget);
         nameLine->setObjectName(QString::fromUtf8("nameLine"));
 
-        gridLayout_3->addWidget(nameLine, 0, 0, 1, 1);
+        gridLayout->addWidget(nameLine, 0, 1, 1, 1);
+
+        label_2 = new QLabel(widget);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+
+        gridLayout->addWidget(label_2, 1, 0, 1, 1);
 
         passwordLine = new QLineEdit(widget);
         passwordLine->setObjectName(QString::fromUtf8("passwordLine"));
 
-        gridLayout_3->addWidget(passwordLine, 1, 0, 1, 1);
+        gridLayout->addWidget(passwordLine, 1, 1, 1, 1);
 
-        typeLine = new QLineEdit(widget);
-        typeLine->setObjectName(QString::fromUtf8("typeLine"));
+        label_3 = new QLabel(widget);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
 
-        gridLayout_3->addWidget(typeLine, 2, 0, 1, 1);
+        gridLayout->addWidget(label_3, 2, 0, 1, 1);
 
-        careLine = new QLineEdit(widget);
-        careLine->setObjectName(QString::fromUtf8("careLine"));
+        permissionLine = new QLineEdit(widget);
+        permissionLine->setObjectName(QString::fromUtf8("permissionLine"));
 
-        gridLayout_3->addWidget(careLine, 3, 0, 1, 1);
+        gridLayout->addWidget(permissionLine, 2, 1, 1, 1);
 
+        crossImg = new QLabel(centralWidget);
+        crossImg->setObjectName(QString::fromUtf8("crossImg"));
+        crossImg->setGeometry(QRect(290, 10, 71, 71));
         AddUserWindow->setCentralWidget(centralWidget);
 
         retranslateUi(AddUserWindow);
@@ -159,12 +148,12 @@ public:
     {
         AddUserWindow->setWindowTitle(QApplication::translate("AddUserWindow", "AddUserWindow", 0, QApplication::UnicodeUTF8));
         actionExit->setText(QApplication::translate("AddUserWindow", "Exit", 0, QApplication::UnicodeUTF8));
-        label->setText(QApplication::translate("AddUserWindow", "User Name", 0, QApplication::UnicodeUTF8));
-        label_2->setText(QApplication::translate("AddUserWindow", "Password", 0, QApplication::UnicodeUTF8));
-        label_3->setText(QApplication::translate("AddUserWindow", "Type User", 0, QApplication::UnicodeUTF8));
-        label_4->setText(QApplication::translate("AddUserWindow", "Type of Care", 0, QApplication::UnicodeUTF8));
         okBtn->setText(QApplication::translate("AddUserWindow", "OK", 0, QApplication::UnicodeUTF8));
         cancelBtn->setText(QApplication::translate("AddUserWindow", "Cancel", 0, QApplication::UnicodeUTF8));
+        label->setText(QApplication::translate("AddUserWindow", "User Name:", 0, QApplication::UnicodeUTF8));
+        label_2->setText(QApplication::translate("AddUserWindow", "Password:", 0, QApplication::UnicodeUTF8));
+        label_3->setText(QApplication::translate("AddUserWindow", "Permission:", 0, QApplication::UnicodeUTF8));
+        crossImg->setText(QString());
     } // retranslateUi
 
 };

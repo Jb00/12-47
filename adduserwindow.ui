@@ -6,59 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>380</width>
-    <height>268</height>
+    <width>381</width>
+    <height>302</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>AddUserWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>20</y>
-      <width>87</width>
-      <height>151</height>
-     </rect>
-    </property>
-    <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="0">
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string>User Name</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLabel" name="label_2">
-       <property name="text">
-        <string>Password</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="label_3">
-       <property name="text">
-        <string>Type User</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="label_4">
-       <property name="text">
-        <string>Type of Care</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
    <widget class="QWidget" name="layoutWidget_2">
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>210</y>
+      <y>260</y>
       <width>381</width>
       <height>31</height>
      </rect>
@@ -110,29 +70,76 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>20</y>
-      <width>261</width>
-      <height>161</height>
+      <x>10</x>
+      <y>100</y>
+      <width>361</width>
+      <height>151</height>
      </rect>
     </property>
-    <layout class="QGridLayout" name="gridLayout_3">
-     <item row="0" column="0">
-      <widget class="QLineEdit" name="nameLine"/>
-     </item>
-     <item row="1" column="0">
-      <widget class="QLineEdit" name="passwordLine"/>
-     </item>
-     <item row="2" column="0">
-      <widget class="QLineEdit" name="typeLine"/>
-     </item>
-     <item row="3" column="0">
-      <widget class="QLineEdit" name="careLine"/>
-     </item>
-    </layout>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>341</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>User Name:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="nameLine"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Password:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="passwordLine"/>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Permission:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="permissionLine"/>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="crossImg">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>10</y>
+      <width>71</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
    </widget>
   </widget>
   <action name="actionExit">

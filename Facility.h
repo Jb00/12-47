@@ -95,7 +95,7 @@ public:
     QList<Patient*> * getListLTC();
 
 
-
+    QString getType();
 
 
 };

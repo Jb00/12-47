@@ -20,6 +20,13 @@ AddUserCtrl* AddUserCtrl::getInstance()
     return anInstance;//Return the instance.
 }
 
+void AddUserCtrl::invalid(){
+
+    invalidEntry = new InvalidWindow();
+    invalidEntry->show();
+    invalidEntry->setLabelText("Insufficient data entered.");
+    genCTRL::center(*invalidEntry);
+}
 
 void AddUserCtrl::addToDb()
 {

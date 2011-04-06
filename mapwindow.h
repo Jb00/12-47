@@ -18,6 +18,7 @@
 //TEST REPORT QLIST
 #include <QList>
 #include <QString>
+#include "Facility.h"
 
 namespace Ui {
     class MapWindow;
@@ -28,7 +29,7 @@ class MapWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MapWindow(const QString& filePath);
+    explicit MapWindow(const QString& filePath, QString perm);
     ~MapWindow();
 
     void keyPressEvent(QKeyEvent * event);
@@ -41,6 +42,7 @@ public:
 
 private:
     QList<QString> listResponse;
+    QList<Facility*> paintList ;
 
     Ui::MapWindow *ui;
     QString fileName;
@@ -48,18 +50,30 @@ private:
     QList<int> *facSizeList;
     QList<QColor> *colorList;
     int area;
+    QString permissions;
 
+    QList<Facility*> hospitalList;
+    QList<Facility*> nursingList;
+    QList<Facility*> availableAC;
+    QList<Facility*> availableCCC;
+    QList<Facility*> availableLTC;
+
+    int type;
 
 private slots:
 
     void createUser_clicked();
     void createFac_clicked();
-    //void logout_clicked();
-    void facilityView();
-    //void reportSetup();
+    void logout_clicked();
+    void removeUser_clicked();
     void generateReport_clicked();
+    void viewHospitals_clicked();
+    void viewNursing_clicked();
+    void viewAll_clicked();
+    void acBeds_clicked();
+    void cccBeds_clicked();
+    void ltcBeds_clicked();
 };
 
 
 #endif // MAPWINDOW_H
-

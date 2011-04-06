@@ -19,6 +19,7 @@ public:
     explicit AddUserWindow(QWidget *parent = 0);
     ~AddUserWindow();
 
+    void setScheme();
     void keyPressEvent(QKeyEvent * event);
 
 private:

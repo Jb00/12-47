@@ -14,6 +14,7 @@
 #include "addfacility.h"
 #include "ReportController.h"
 #include "genreportwin.h"
+#include "removeuser.h"
 
 /*
 
@@ -25,6 +26,8 @@
 
 #include "invalidwindow.h"
 */
+
+//References: Deliverable 2 MapWindow Controler
 
 #include <QDateTime>
 class MapWinCtrl: public genCTRL
@@ -38,7 +41,10 @@ public:
     void goToAddFac(const QPoint &, const int &, const QColor &);
     void setupPatients();
     void setupFacility();
-    void gotoFacility();
+    void gotoFacility(int);
+    void goToGenerate();
+    void goToRemoveUser();
+
     void setupUser();
     int getId();
     static MapWinCtrl* getInstance();
@@ -46,7 +52,11 @@ public:
     void setWlArray(QString,QString);
     int getWlArray(int);
     void setReport();
-    void goToGenerate();
+    QList<Facility*> getHospitals();
+    QList<Facility*> getNursing();
+    QList<Facility*> getACAvailable();
+    QList<Facility*> getCCCAvailable();
+    QList<Facility*> getLTCAvailable();
 
 
     void invalid();
@@ -54,6 +64,7 @@ public:
     QList<Patient*> listOfPatient;
     void addToFacilityList(int facilityID,QString facilityName,int x,int y,int aAC,int aCCC,int aLTC);
 
+        QList<User*> listOfUser;
 
 private:
 
@@ -64,14 +75,21 @@ private:
     FacilityWindow* aFacilityView;
     InvalidWindow* invalidWin;
     GenReportWin* reportWin;
+    RemoveUser* remUser;
     int wlArray[5];
+
+    QList<Facility*> listOfHospital;
+    QList<Facility*> listOfNursing;
+    QList<Facility*> availableACBeds;
+    QList<Facility*> availableLTCBeds;
+    QList<Facility*> availableCCCBeds;
 
     //FAKE DATA TEST
 
 
  //   QList<Patient*> listOfPatient;
  //   QList<Facility*>listOfFacility;
-    QList<User*> listOfUser;
+  //  QList<User*> listOfUser;
 
 
     //Test Patient for Add patient to LTC
@@ -82,7 +100,7 @@ private:
     Patient * aPatient15;
     Patient * aPatient16;
     Patient * aPatient17;
-    QList<Patient*> aPatientList;
+ //   QList<Patient*> aPatientList;
 
     Facility * aFacility2;
     Facility * aFacility3;
@@ -90,4 +108,3 @@ private:
 };
 
 #endif // MAPWINCTRL_H
-

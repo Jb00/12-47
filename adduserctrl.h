@@ -11,7 +11,7 @@
 #include <QSqlTableModel>
 
 #include "User.h"
-
+#include "invalidwindow.h"
 
 class AddUserCtrl: public genCTRL
 {
@@ -23,7 +23,7 @@ private :
         QString password;
         QString type;
         QList<User *> *userList;
-
+        InvalidWindow* invalidEntry;
 
 public:
     ~AddUserCtrl();
@@ -39,7 +39,7 @@ public:
     void setId(int);
     void setList(QList<User *>*);
 
-
+    void invalid();
 
 };
 

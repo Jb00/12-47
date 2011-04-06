@@ -31,8 +31,7 @@ QList<Patient*>* Facility::getListAcute(){return &listAcute;}
 QList<Patient*>* Facility::getListComplex(){return &listComplex;}
 QList<Patient*>* Facility::getListLTC(){return &listLTC;}
 
-
-
+QString Facility::getType(){return type;}
 //Add a bed Acute
 void Facility::addBedAcute()
 {
@@ -349,5 +348,3 @@ void Facility::setName(QString aName)
 int Facility::getTotalAC(){return NumberBedTotalAcute;}
 int Facility::getTotalCCC(){return NumberBedTotalComplex;}
 int Facility::getTotalLTC(){return NumberBedTotalLTC;}
-
-

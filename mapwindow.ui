@@ -6,26 +6,42 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>969</width>
-    <height>558</height>
+    <width>1000</width>
+    <height>1000</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MapWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QLabel" name="mapImg">
+   <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>971</width>
-      <height>531</height>
+      <x>599</x>
+      <y>10</y>
+      <width>391</width>
+      <height>221</height>
      </rect>
     </property>
-    <property name="text">
-     <string/>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
     </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>20</y>
+       <width>51</width>
+       <height>17</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Legend</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -33,8 +49,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>969</width>
-     <height>25</height>
+     <width>1000</width>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -72,20 +88,10 @@
      <addaction name="actionHospital"/>
      <addaction name="separator"/>
      <addaction name="actionNursing_Home"/>
-    </widget>
-    <widget class="QMenu" name="menuZoom">
-     <property name="title">
-      <string>Zoom</string>
-     </property>
-     <addaction name="actionZoom_In"/>
      <addaction name="separator"/>
-     <addaction name="actionZoom_Out"/>
+     <addaction name="actionView_All"/>
     </widget>
     <addaction name="menuFacility"/>
-    <addaction name="separator"/>
-    <addaction name="actionFull_Screen"/>
-    <addaction name="separator"/>
-    <addaction name="menuZoom"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -100,7 +106,7 @@
     </property>
     <addaction name="actionAdd_newUser"/>
     <addaction name="separator"/>
-    <addaction name="actionCreate_Facility"/>
+    <addaction name="actionRemove_User"/>
    </widget>
    <widget class="QMenu" name="menuReport">
     <property name="title">
@@ -111,8 +117,8 @@
    <addaction name="menuFile"/>
    <addaction name="menuView"/>
    <addaction name="menuAdmin"/>
-   <addaction name="menuHelp"/>
    <addaction name="menuReport"/>
+   <addaction name="menuHelp"/>
   </widget>
   <action name="actionAbout">
    <property name="text">
@@ -201,7 +207,17 @@
   </action>
   <action name="actionGenerate">
    <property name="text">
-    <string>Gen</string>
+    <string>Generate</string>
+   </property>
+  </action>
+  <action name="actionView_All">
+   <property name="text">
+    <string>View All</string>
+   </property>
+  </action>
+  <action name="actionRemove_User">
+   <property name="text">
+    <string>Remove User</string>
    </property>
   </action>
  </widget>

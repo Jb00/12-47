@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mapwindow.ui'
 **
-** Created: Tue Apr 5 11:45:26 2011
+** Created: Tue Apr 5 22:46:15 2011
 **      by: Qt User Interface Compiler version 4.7.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -14,6 +14,7 @@
 #include <QtGui/QAction>
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
+#include <QtGui/QFrame>
 #include <QtGui/QHeaderView>
 #include <QtGui/QLabel>
 #include <QtGui/QMainWindow>
@@ -44,15 +45,17 @@ public:
     QAction *actionDelete_Facility;
     QAction *actionFacilityView;
     QAction *actionGenerate;
+    QAction *actionView_All;
+    QAction *actionRemove_User;
     QWidget *centralWidget;
-    QLabel *mapImg;
+    QFrame *frame;
+    QLabel *label;
     QMenuBar *menuBar;
     QMenu *menuFile;
     QMenu *menuSearch;
     QMenu *menuAvailable_Beds;
     QMenu *menuView;
     QMenu *menuFacility;
-    QMenu *menuZoom;
     QMenu *menuHelp;
     QMenu *menuAdmin;
     QMenu *menuReport;
@@ -61,7 +64,7 @@ public:
     {
         if (MapWindow->objectName().isEmpty())
             MapWindow->setObjectName(QString::fromUtf8("MapWindow"));
-        MapWindow->resize(969, 558);
+        MapWindow->resize(1000, 1000);
         actionAbout = new QAction(MapWindow);
         actionAbout->setObjectName(QString::fromUtf8("actionAbout"));
         actionHospital = new QAction(MapWindow);
@@ -98,15 +101,24 @@ public:
         actionFacilityView->setObjectName(QString::fromUtf8("actionFacilityView"));
         actionGenerate = new QAction(MapWindow);
         actionGenerate->setObjectName(QString::fromUtf8("actionGenerate"));
+        actionView_All = new QAction(MapWindow);
+        actionView_All->setObjectName(QString::fromUtf8("actionView_All"));
+        actionRemove_User = new QAction(MapWindow);
+        actionRemove_User->setObjectName(QString::fromUtf8("actionRemove_User"));
         centralWidget = new QWidget(MapWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
-        mapImg = new QLabel(centralWidget);
-        mapImg->setObjectName(QString::fromUtf8("mapImg"));
-        mapImg->setGeometry(QRect(0, 0, 971, 531));
+        frame = new QFrame(centralWidget);
+        frame->setObjectName(QString::fromUtf8("frame"));
+        frame->setGeometry(QRect(599, 10, 391, 221));
+        frame->setFrameShape(QFrame::StyledPanel);
+        frame->setFrameShadow(QFrame::Raised);
+        label = new QLabel(frame);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(170, 20, 51, 17));
         MapWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MapWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 969, 25));
+        menuBar->setGeometry(QRect(0, 0, 1000, 23));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QString::fromUtf8("menuFile"));
         menuSearch = new QMenu(menuFile);
@@ -117,8 +129,6 @@ public:
         menuView->setObjectName(QString::fromUtf8("menuView"));
         menuFacility = new QMenu(menuView);
         menuFacility->setObjectName(QString::fromUtf8("menuFacility"));
-        menuZoom = new QMenu(menuView);
-        menuZoom->setObjectName(QString::fromUtf8("menuZoom"));
         menuHelp = new QMenu(menuBar);
         menuHelp->setObjectName(QString::fromUtf8("menuHelp"));
         menuAdmin = new QMenu(menuBar);
@@ -130,8 +140,8 @@ public:
         menuBar->addAction(menuFile->menuAction());
         menuBar->addAction(menuView->menuAction());
         menuBar->addAction(menuAdmin->menuAction());
-        menuBar->addAction(menuHelp->menuAction());
         menuBar->addAction(menuReport->menuAction());
+        menuBar->addAction(menuHelp->menuAction());
         menuFile->addAction(menuSearch->menuAction());
         menuFile->addSeparator();
         menuFile->addAction(actionLogout);
@@ -142,21 +152,16 @@ public:
         menuAvailable_Beds->addSeparator();
         menuAvailable_Beds->addAction(actionLong_Term_Care);
         menuView->addAction(menuFacility->menuAction());
-        menuView->addSeparator();
-        menuView->addAction(actionFull_Screen);
-        menuView->addSeparator();
-        menuView->addAction(menuZoom->menuAction());
         menuFacility->addAction(actionHospital);
         menuFacility->addSeparator();
         menuFacility->addAction(actionNursing_Home);
-        menuZoom->addAction(actionZoom_In);
-        menuZoom->addSeparator();
-        menuZoom->addAction(actionZoom_Out);
+        menuFacility->addSeparator();
+        menuFacility->addAction(actionView_All);
         menuHelp->addAction(actionAbout);
         menuHelp->addAction(actionFacilityView);
         menuAdmin->addAction(actionAdd_newUser);
         menuAdmin->addSeparator();
-        menuAdmin->addAction(actionCreate_Facility);
+        menuAdmin->addAction(actionRemove_User);
         menuReport->addAction(actionGenerate);
 
         retranslateUi(MapWindow);
@@ -184,14 +189,15 @@ public:
         actionCreate_Facility->setText(QApplication::translate("MapWindow", "Create Facility", 0, QApplication::UnicodeUTF8));
         actionDelete_Facility->setText(QApplication::translate("MapWindow", "Delete Facility", 0, QApplication::UnicodeUTF8));
         actionFacilityView->setText(QApplication::translate("MapWindow", "FacilityView", 0, QApplication::UnicodeUTF8));
-        actionGenerate->setText(QApplication::translate("MapWindow", "Gen", 0, QApplication::UnicodeUTF8));
-        mapImg->setText(QString());
+        actionGenerate->setText(QApplication::translate("MapWindow", "Generate", 0, QApplication::UnicodeUTF8));
+        actionView_All->setText(QApplication::translate("MapWindow", "View All", 0, QApplication::UnicodeUTF8));
+        actionRemove_User->setText(QApplication::translate("MapWindow", "Remove User", 0, QApplication::UnicodeUTF8));
+        label->setText(QApplication::translate("MapWindow", "Legend", 0, QApplication::UnicodeUTF8));
         menuFile->setTitle(QApplication::translate("MapWindow", "File", 0, QApplication::UnicodeUTF8));
         menuSearch->setTitle(QApplication::translate("MapWindow", "Search", 0, QApplication::UnicodeUTF8));
         menuAvailable_Beds->setTitle(QApplication::translate("MapWindow", "Available Beds", 0, QApplication::UnicodeUTF8));
         menuView->setTitle(QApplication::translate("MapWindow", "View", 0, QApplication::UnicodeUTF8));
         menuFacility->setTitle(QApplication::translate("MapWindow", "Facility", 0, QApplication::UnicodeUTF8));
-        menuZoom->setTitle(QApplication::translate("MapWindow", "Zoom", 0, QApplication::UnicodeUTF8));
         menuHelp->setTitle(QApplication::translate("MapWindow", "Help", 0, QApplication::UnicodeUTF8));
         menuAdmin->setTitle(QApplication::translate("MapWindow", "Admin", 0, QApplication::UnicodeUTF8));
         menuReport->setTitle(QApplication::translate("MapWindow", "Report", 0, QApplication::UnicodeUTF8));
