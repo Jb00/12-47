@@ -23,6 +23,7 @@ MapWinCtrl::MapWinCtrl()
 
    setupFacility(); //Where in reality our Db will only contains 1 facility ? So only the first facility will be set there.
    setupPatients(); //Put all patients inside the facility
+   setupUser();
 //   listOfPatient.append(aPatient15);listOfPatient.append(aPatient16);listOfPatient.append(aPatient17);
 //   listOfFacility.append(aFacility2);listOfFacility.append(aFacility3);listOfFacility.append(aFacility4);
    MessageController::getInstance()->start();
@@ -40,6 +41,7 @@ MapWinCtrl::MapWinCtrl()
 
 }
 MapWinCtrl::~MapWinCtrl(){}
+
 
 void MapWinCtrl::invalid(){
 

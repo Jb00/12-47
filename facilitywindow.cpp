@@ -125,11 +125,13 @@ void FacilityWindow::addBedBtn_clicked()
 {
        if(ui->acuteRaio->isChecked()){
 
-           AddBedController::getInstance()->addtoBed(ui->addBedLine->text(),"Acute",facility);
+
+           //AddBedController::getInstance()->addtoBed(ui->addBedLine->text(),"Acute",facility);
+           AddBedController::getInstance()->addtoBed2(ui->addBedLine->text(),"Acute",facility);
            AcuteSelected(); //To refresh the UI
        }
        else if (ui->complexRadio->isChecked()){
-           AddBedController::getInstance()->addtoBed(ui->addBedLine->text(),"Complex",facility);
+           AddBedController::getInstance()->addtoBed2(ui->addBedLine->text(),"Complex",facility);
            ComplexSelected();//To refresh the UI
        }
 
@@ -140,7 +142,7 @@ void FacilityWindow::addBedBtn_clicked()
 
        else if (ui->longRadio->isChecked()){
 
-           AddBedController::getInstance()->addtoBed(ui->addBedLine->text(),"LTC",facility);
+           AddBedController::getInstance()->addtoBed2(ui->addBedLine->text(),"LTC",facility);
            LTCSelected(); //To refresh the UI
        }
 

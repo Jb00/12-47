@@ -6,6 +6,7 @@
 #include <Facility.h>
 #include <iostream>
 #include <typeinfo>
+
 class AddBedController
 {
 private :
@@ -18,6 +19,7 @@ public:
     static AddBedController* getInstance();
     void addtoBed(QString,QString,Facility*);
     void addBedXML(QString,QString,QString,QString,QString);
+    void addtoBed2(QString,QString,Facility*);
 };
 
 #endif // ADDBEDCONTROLLER_H

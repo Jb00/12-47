@@ -49,6 +49,9 @@ void AddFacCtrl::addToDb()
         qDebug() <<facilityList->size();
         facilityList=NULL;
 
+        MessageController::getInstance()->toSend(XMLReader::getInstance()->addFacility(id,facilityName,x,y,AC,CCC,LTC,0));
+
+
 
   /*  QSqlQuery query;
     QString queryText;
